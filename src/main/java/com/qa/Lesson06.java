@@ -51,13 +51,16 @@ public class Lesson06 {
         String price1 = driver.findElement(By.xpath("//div[contains(@class,'ptsCol-2')]//span[contains(text(),'959')]")).
                 getText().replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1");
         String price2 = driver.findElement(By.xpath("//div[contains(@class,'ptsCol-2')]//span[contains(text(),'2699')]")).
-                getText().replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1");;
+                getText().replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1");
+        ;
         System.out.println("Samsung Galaxy S6  " + "$" + price1);
         System.out.println("Samsung Galaxy S6 crossed " + "$" + price2);
         float result1 = Float.parseFloat(price1);
         float result2 = Float.parseFloat(price2);
         System.out.println("Difference = " + (result2 - result1));
-        // Test for   https://unicode-table.com/ru/
+    }
+    @Test   // Test for   https://unicode-table.com/ru/
+    public void uniCode() {
         driver.get("https://unicode-table.com/ru/");
         System.out.println(driver.findElement(By.xpath("//li[@data-code='81']")).getText());
         System.out.println(driver.findElement(By.xpath("//li[@data-code='36']")).getText());
